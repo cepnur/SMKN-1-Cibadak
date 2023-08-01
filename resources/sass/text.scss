@@ -1,0 +1,108 @@
+/**
+ *
+ * Text classes
+ *
+ */
+
+ @layer components {
+    /* Display */
+    h1, .display-1 {
+        @apply text-lg md:text-2xl lg:text-5xl font-bold leading-snug text-darkLight;
+    }
+
+    h2, .display-2 {
+        @apply text-base md:text-lg lg:text-[32px] font-bold leading-snug text-darkLight;
+    }
+
+    h3, .display-3 {
+        @apply text-sm md:text-base lg:text-2xl font-bold leading-snug text-darkLight;
+    }
+
+    h4, .display-4 {
+        @apply text-sm md:text-base lg:text-lg font-bold leading-snug text-darkLight;
+    }
+
+    /* Paragraph */
+    p, .paragraph {
+        @apply text-sm lg:text-base leading-relaxed;
+    }
+    .paragraph-2 {
+        @apply text-xs lg:text-sm leading-5;
+    }
+
+    .display-1,
+    .display-2,
+    .display-3,
+    .display-4,
+    .paragraph,
+    .paragraph-2 {
+        a {
+            &:not([class*="btn-"]) {
+                @apply text-primary;
+            }
+            &:not([class*="no-underline"]) {   
+                @apply underline underline-offset-1 hover:underline-offset-2;
+            }
+        }
+        h1,
+        .h1 {
+            &:not([class*="text-"]) {
+                @apply text-lg md:text-2xl lg:text-5xl leading-snug text-darkLight mb-6;
+            }
+        }
+        h2,
+        .h2 {
+            &:not([class*="text-"]) {
+                @apply text-base md:text-lg lg:text-[32px] leading-snug text-darkLight mb-3;
+            }
+        }
+        h3,
+        .h3 {
+            &:not([class*="text-"]) {
+                @apply text-sm md:text-base lg:text-2xl leading-snug text-darkLight mb-3;
+            }
+        }
+        h4,
+        .h4 {
+            &:not([class*="text-"]) {
+                @apply text-sm md:text-base lg:text-lg leading-snug text-darkLight mb-2;
+            }
+        }
+        h5,
+        .h5 {
+            &:not([class*="text-"]) {
+                @apply text-lg lg:text-2xl mb-1;
+            }
+        }
+        h6,
+        .h6 {
+            &:not([class*="text-"]) {
+                @apply text-base lg:text-xl mb-1;
+            }
+        }
+
+        label {
+            @apply font-semibold;
+        }
+        strong,
+        b {
+            @apply font-semibold;
+        }
+        p,li {
+            @apply leading-normal;
+            &:not([class*="mb-"]):not([class*="margin-"]) {
+                @apply mb-5;
+            }
+        }
+        li {
+            @apply mb-1
+        }
+        ul {
+            @apply list-disc mb-5;
+            li {
+                @apply ml-4;
+            }
+        }
+    }
+
+}

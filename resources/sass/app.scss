@@ -1,0 +1,266 @@
+@import "text";
+@import "buttons";
+@import "transitions";
+@import "contactform";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WP Blocks */
+.wp-block-cover {
+  border-radius: 0.25rem;
+}
+
+@layer base {
+  html,
+  body {
+    @apply font-body;
+  }
+}
+.line {
+  @apply h-[0.5px] w-full bg-white opacity-60 flex relative z-20;
+}
+img.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+a img.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+a img.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption-text {
+  @apply text-sm mt-1 font-light;
+}
+
+*[id*="attachment"],
+img,
+iframe {
+  max-width: 100%;
+}
+
+.custom-shadow {
+  box-shadow: 0px 12px 30px rgba(0, 42, 76, 0.15);
+  border-radius: 20px;
+}
+
+.at .at-inner {
+  background-color: transparent;
+  label {
+    color: white;
+  }
+  .btn-at-primary {
+    @apply cursor-pointer text-center min-w-48 py-2.5 px-5 rounded-lg text-base lg:text-lg font-semibold transition-all;
+    @apply bg-primary text-primary hover:bg-primary hover:text-white;
+    @apply float-left;
+  }
+  footer strong {
+    @apply text-white text-sm;
+  }
+}
+
+.default-page,
+.prosedur-layanan {
+  h1,
+  h2 {
+    @apply mb-6 mt-6;
+  }
+  h3,
+  h4 {
+    @apply mb-4 mt-6;
+  }
+  p {
+    @apply mb-1 lg:mb-4;
+  }
+  ul,
+  ol {
+    @apply mb-4;
+  }
+  ol {
+    list-style: auto !important;
+  }
+  ul {
+    list-style: disc !important;
+  }
+  ol,
+  ul,
+  menu {
+    list-style-position: outside !important;
+    padding-left: 16px !important;
+  }
+}
+
+.menu-layanan {
+  .menu-list {
+    ul {
+      padding-left: 0px !important;
+    }
+  }
+}
+
+.content-main {
+  :first-child {
+    @apply mt-0 opacity-100;
+  }
+}
+
+.page_has_children {
+  @apply flex flex-col lg:flex-row gap-10;
+  aside.page-menu {
+    a.active {
+      @apply bg-primary text-softlight;
+    }
+  }
+}
+
+a.link-download {
+  @apply transition-all duration-300 underline decoration-solid decoration-transparent underline-offset-8 hover:decoration-primary;
+}
+
+.gallery-with-twitter {
+  .more-button {
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2;
+  }
+}
+
+.map-embed-wrapper {
+  iframe {
+    @apply w-full;
+  }
+}
+
+.single.single-post {
+  .content-main-wrapper {
+    img.wp-post-image {
+      @apply w-full h-auto object-contain object-center mb-10;
+    }
+  }
+}
+
+#vue-header.pinned_nav {
+  @apply fixed top-0 w-full bg-white z-50;
+}
+
+#vue-header.active {
+  @apply max-h-[1000px] opacity-100;
+}
+
+#vue-header.pinned_nav.active {
+  div.header-primary {
+    &.header-logo {
+      @apply opacity-0 max-h-0 overflow-hidden;
+    }
+  }
+}
+
+.input-form {
+  @apply flex gap-6 flex-wrap w-full;
+  .form-group {
+    @apply flex-1 inline-flex flex-col gap-4;
+    span.label {
+      @apply font-bold text-black;
+    }
+    .form-input {
+      @apply transition-colors duration-300 ease-linear border border-[#EAEAEA] rounded-lg;
+      &:focus {
+        @apply ring-primary border-primary;
+      }
+    }
+  }
+}
+
+textarea {
+  &.form-input {
+    @apply transition-colors duration-300 ease-linear border border-[#EAEAEA] rounded-lg;
+    &:focus {
+      @apply ring-primary border-primary;
+    }
+  }
+}
+
+select {
+  &.form-select {
+    &.form-input {
+      @apply transition-colors duration-300 ease-linear border border-[#EAEAEA] rounded-lg;
+      &:focus {
+        @apply ring-primary border-primary;
+      }
+    }
+  }
+}
+
+// wp block accordion style
+.page-template-template-prosedur-layanan {
+  .wp-block-columns.accordion {
+    @apply border border-[#EAEAEA] rounded-xl py-3 px-4 mb-3;
+    .accordion__title {
+      @apply mb-0 mt-0 relative;
+      &::after {
+        content: url("/wp-content/themes/imigrasi/resources/images/svg/arrow-accordion.svg");
+        @apply absolute top-1/2 right-0 transform -translate-y-[50%] transition-all duration-300 delay-75 rotate-0;
+      }
+      &.open {
+        &::after {
+          @apply transition-all duration-300 delay-75 rotate-180;
+        }
+      }
+    }
+    .accordion_content {
+      @apply transition-all duration-300 opacity-0 max-h-0 mb-0 mt-0;
+      &.show {
+        @apply transition-all duration-300 opacity-100 max-h-[10000px] mt-4;
+      }
+    }
+  }
+}
+
+.menu-menu_layanan {
+  @apply transition-all duration-300 ease-out;
+  &.show_menu {
+    @apply transition-all duration-300 ease-in z-10  max-w-[1000px] opacity-100;
+  }
+}
+
+.splide {
+  @apply relative;
+  .splide__arrows {
+    @apply absolute bottom-8 z-10 right-40 flex gap-4;
+    .splide__arrow.splide__arrow--prev {
+      position: unset !important;
+    }
+    .splide__arrow.splide__arrow--next {
+      position: unset !important;
+    }
+  }
+}
+
+.page-id-19 #vue-header,
+.home #vue-header {
+  @apply absolute z-50 w-full;
+  div {
+    @apply xl:bg-transparent lg:bg-transparent;
+  }
+}
+
+.slick-track .slick-slide {
+  @apply w-[200px];
+}
